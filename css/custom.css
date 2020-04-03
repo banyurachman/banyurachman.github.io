@@ -17,14 +17,14 @@ body {
   min-height: 99vh;
 }
 
-#mainSegment .ui.grid .ui.column {
-  padding: 0px 20px;
-}
-
 @media (max-width: 480px) {
   #mainSegment .ui.grid .ui.column:first-child {
     display: none;
   }
+}
+
+#mainSegment .ui.grid .ui.column:last-child {
+  padding-left: 50px;
 }
 
 #mainSegment .ui.grid .ui.column:last-child img {
@@ -41,15 +41,26 @@ body {
 #mainSegment img {
   border-radius: 100%;
   cursor: pointer;
+  -webkit-box-shadow: #0004 10px 40px 70px;
+          box-shadow: #0004 10px 40px 70px;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
 #mainSegment img:hover {
-  -webkit-transform: rotate(15deg);
-          transform: rotate(15deg);
+  -webkit-transform: rotate(15deg) scale(0.95);
+          transform: rotate(15deg) scale(0.95);
+  -webkit-box-shadow: #0004 5px 35px 65px;
+          box-shadow: #0004 5px 35px 65px;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+@media (max-width: 480px) {
+  #mainSegment img {
+    -webkit-box-shadow: #0004 5px 20px 35px;
+            box-shadow: #0004 5px 20px 35px;
+  }
 }
 
 #mainSegment body, #mainSegment h1, #mainSegment p, #mainSegment div, #mainSegment a {
@@ -59,6 +70,7 @@ body {
 #mainSegment h1 {
   font-size: 32px;
   margin-bottom: 25px;
+  margin-top: 0px;
 }
 
 #mainSegment p a {
