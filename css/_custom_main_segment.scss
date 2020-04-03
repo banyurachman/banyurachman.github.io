@@ -1,0 +1,78 @@
+#mainSegment{
+    border-bottom: 0px solid #0000;
+
+    .ui.text.container{
+        @include respond-to("phone"){
+            padding: 0px 25px;
+        }
+    }
+
+    .ui.grid{
+        .column{
+
+            &:first-child{
+                @include respond-to("phone"){
+                    display: none;
+                }
+            }
+
+            &:last-child{
+                padding-left: 50px;
+
+                img{
+                    display: none;
+
+                    @include respond-to("phone"){
+                        display: block;
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    img{
+        border-radius: 100%;
+        cursor: pointer;
+        box-shadow: #0004 10px 40px 70px;
+        @include transition();
+
+        &:hover{
+            transform: rotate(15deg) scale(0.95);
+            box-shadow: #0004 5px 35px 65px;
+            @include transition();
+        }
+
+        @include respond-to("phone"){
+            box-shadow: #0004 5px 20px 35px;
+        }
+    }
+
+    h1{
+        font-size: 32px;
+        margin-bottom: 25px;
+        margin-top: 0px;
+    }
+
+    p{
+        a{
+            color: black;
+            text-decoration: underline;
+        }
+
+        &+p{
+            font-style: italic;
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+
+    a.socmedLink{
+        color: black;
+        opacity: 0.5;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+// Breakpoints for responsiveness
+$breakpoints: (
+  'phone':  480px,
+  'tablet': 768px,
+  'landscapeTablet': 1024px
+)!default;
+
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+// Mixin for transition effect
+@mixin transition(){
+  -webkit-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+}
+
+// Box shadow
+@mixin box-shadow(){
+  box-shadow: #0004 10px 40px 70px;
+}
+
+body{
+    background-image: url('../img/linedpaper.png');
+}
+
+body, h1, h2, h3, h4, h5, h6, p, div, a{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.ui.contentSegment{
+  p{
+    line-height: 150%;
+    font-size: 16px;
+  }
+}

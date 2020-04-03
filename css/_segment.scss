@@ -1,0 +1,29 @@
+.ui.stripe.segment{
+    .ui.grid{
+        min-height: 100vh;
+    }
+
+    &.contentSegment{
+        .ui.grid{
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+            @include respond-to("phone"){
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+
+            .column{
+                @include respond-to("phone"){
+                    align-self: flex-start !important;
+                }
+            }
+        }
+    }
+
+    .ui.container{
+        @include respond-to("phone"){
+            padding: 0px 25px;
+        }
+    }
+}

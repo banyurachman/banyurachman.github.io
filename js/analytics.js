@@ -63,4 +63,12 @@ jQuery(document).ready(function ($) {
         sendEvent('email', 'click', 'Click the email in the main segment');
     });
     
+    $('#secondSegment img:first-child').click(function () {
+        sendEvent('gemastik_youtube', 'click', 'Click the gemastik pic in the second segment');
+    });
+   
+    $('#secondSegment img:last-child').click(function () {
+        sendEvent('jamming_youtube', 'click', 'Click the macbook pic in the second segment');
+    });
+    
 });

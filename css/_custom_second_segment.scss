@@ -1,0 +1,55 @@
+#secondSegment{
+
+    .ui.grid{
+        .column{
+
+            &:first-child{
+                @include respond-to("phone"){
+                    display: none;
+                }
+
+                img{
+                    cursor: pointer;
+
+                    &:first-child{
+                        position: relative;
+                        left: -50%;
+                        border-radius: 10px;
+                        @include box-shadow();
+                        @include transition();
+
+                        &:hover{
+                            left: -40%;
+                            @include transition();
+                        }
+                    }
+
+                    &:last-child{
+                        position: absolute;
+                        left: 25%;
+                        top: 50%;
+                        border-radius: 10px;
+                        box-shadow: #0003 20px 50px 70px;
+
+                        @include transition();
+
+                        &:hover{
+                            top: 40%;
+                            @include transition();
+                        }
+                    }
+                }
+            }
+
+            &:last-child{
+                 iframe{
+                    display: none;
+
+                    @include respond-to("phone"){
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
